@@ -1,0 +1,15 @@
+:host {
+    ion-content {
+        --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+       //--background: url("/assets/img/slide1.png") no-repeat;
+      // --background: #fff url("/assets/img/logo1.png") no-repeat center center / cover;
+    }
+}
+
+.paz {
+    position: relative;
+    z-index: 10;
+}
+.clair {
+ color :white;
+}

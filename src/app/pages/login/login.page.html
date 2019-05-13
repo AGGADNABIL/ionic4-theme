@@ -1,0 +1,114 @@
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="theme-bg"></div>
+  <div class="auth-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h4 no-margin>
+        <ion-text color="light" class="fw700">
+          Gestion des tournées de livraison
+        </ion-text>
+      </h4>
+    </div>
+
+    <!-- Login form -->
+    <form [formGroup]="onLoginForm" class="list-form">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="contact" item-start></ion-icon>
+          Utilisateur
+        </ion-label>
+        <ion-input color="secondary" type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('required')">
+        <ion-text color="warning">
+          champ obligatoire
+        </ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Mot de passe
+        </ion-label>
+        <ion-input color="secondary" type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <p ion-text color="warning" class="text08" *ngIf="onLoginForm.get('password').touched && onLoginForm.get('password').hasError('required')">
+        <ion-text color="warning">
+          champ obligatoire
+        </ion-text>
+        </p>
+    </form>
+
+    <div>
+      <ion-button icon-left color="dark" size="medium" expand="full" shape="round" (click)="goToHome()" [disabled]="!onLoginForm.valid" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Se connecter
+      </ion-button>
+      <!-- <p text-right tappable (click)="forgotPass()" class="paz">
+        <ion-text color="light">
+          <strong>Mot de passe oblier ?</strong>
+        </ion-text>
+      </p>
+      <div text-center margin-top>
+        <span (click)="goToRegister()" class="paz" tappable>
+          <ion-text color="light">
+            S'enregistrer ?
+          </ion-text>
+        </span>
+      </div> -->
+
+      <!-- <ion-grid class="btn-group">
+        <ion-row>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" color="secondary">
+              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" color="secondary">
+              <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" color="secondary">
+              <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid> -->
+
+    </div>
+
+    <!-- Other links -->
+    
+    <!-- <p text-center shape="round">
+      <ion-text color="light">
+         Or Signin with: 
+        <span >OPTIMISATION DES TOURNEES DE LIVRAISON</span>
+        <p text-left>
+            Mettre en place une solution pour
+            optimiser les tournées de véhicules afin d'accroître la satisfaction des
+            clients tout en menant une stratégie de réduction des coûts
+            logistiques.
+        </p>
+      </ion-text>
+    </p> -->
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title text-center>OPTIMISATION DES TOURNEES DE LIVRAISON</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content text-left class="clair">
+       <p> Mettre en place une solution pour
+        optimiser les tournées de véhicules afin d'accroître la satisfaction des
+        clients tout en menant une stratégie de réduction des coûts
+        logistiques.
+      </p>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>
